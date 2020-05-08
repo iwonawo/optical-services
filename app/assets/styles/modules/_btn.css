@@ -10,6 +10,7 @@
 
   &--orange { 
     &,
+    &:link,
     &:visited { background-color: $mainOrangeDark; }
     &:hover,
     &:active { background-color: $mainOrange !important; }
