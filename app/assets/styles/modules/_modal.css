@@ -1,0 +1,69 @@
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.2);
+  transition: all .3s ease-out;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  background-color: rgba($mainVioletDark, .94); 
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar { display: none; } /* Safari and Chrome */
+
+  &--is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  &__inner {
+    width: 100%;
+    //height: 100%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 1); 
+    padding: 3rem 1rem 1rem 1rem;
+    position: relative;
+    @mixin atSmall { 
+      width: 500px; 
+      margin-top: 40px;
+      padding: 1.5rem 1rem 1rem 1rem;
+      height: auto;
+    }
+    @mixin atMedium { 
+      width: 700px;
+      padding: 2rem 300px 1rem 2rem;
+    }
+    @mixin atLarge { width: 1000px; }
+    @mixin atLargeer { margin-top: 80px; }
+  }
+  &__inner-address {
+    background-color: #333; 
+    position: relative;
+    padding: 2rem 0;
+    @mixin atMedium {
+      position: absolute;
+      right: -30px;
+      bottom: -40px;
+      margin-bottom: 10px;
+      box-shadow: -5px -1px 77px -25px rgba(0,0,0, .75);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    transform: scaleX(1.2);
+    transform-origin: 100% 0;
+    cursor: pointer;
+    color: $mainOrangeDark;
+
+    &:hover { color: $mainOrange; }
+  }
+}

@@ -1,0 +1,90 @@
+.headline {
+  font-weight: 300;
+  font-size: 1.55rem;
+  transition: all .1s ease-in-out;
+
+  @mixin atSmaller { font-size: 1.8rem; }
+  @mixin atSmall { font-size: 2.4rem; }
+
+  &--modal {
+    font-size: 1.2rem;
+    @mixin atSmaller { font-size: 1.5rem; }
+    @mixin atSmall { font-size: 1.8rem; }
+  }
+  &--small {
+    font-weight: 200;
+    font-size: .8rem;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    @mixin atSmall { font-size: 1.2rem; }
+  }
+  &--small-modal {
+    font-size: .8rem;
+    @mixin atSmall { font-size: 1rem; }
+  }
+
+  &--medium {
+    font-weight: 200;
+    font-size: 1rem;
+    @mixin atSmall { font-size: 1.8rem; }
+  }
+  &--sub {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    @mixin atSmall { font-size: 1.35rem; }
+    @mixin atMedium { font-size: 1.5rem; }
+  }
+  &--white { color: #fff; }
+  &--orange { color: $mainOrangeDark; }
+  &--violet { color: $mainVioletDark; }
+
+  &--hover {
+    &,
+    &:hover,
+    &:active {
+      color: $mainVioletDark;
+      font-weight: 400;
+    }
+  }
+  &--narrow {
+    max-width: 800px;
+  }
+  &--centered {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }  
+  &--about {
+    text-align: right;
+    color: $mainViolet;
+    font-weight: 200;
+    cursor: pointer;
+  }
+  &--vision {
+    color: $mainViolet;
+    cursor: pointer;
+    font-weight: 200;
+  }
+  &--active {
+    color: $mainVioletDark;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  &--box {
+    position: relative;
+    .headline--horizontal-line {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc(50% - 10px);
+      height: 30px;
+      width: 1px;
+      background-color: $mainViolet;
+
+      @mixin atSmaller { height: 45px; }
+      @mixin atSmall { height: 70px; }
+    }
+  }
+  
+}

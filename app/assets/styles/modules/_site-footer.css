@@ -1,0 +1,24 @@
+.site-footer {
+  background-color: $mainVioletExtraDark;
+  color: #fff;
+  padding: .8rem 0;
+  text-align: center;
+
+  &__text {
+    font-family: inherit;
+    font-weight: 200;
+    font-size: .5rem;
+    transition: all .3s ease-in-out;
+    @mixin atSmall { font-size: .8rem;}
+
+    a {
+      &,
+      &:visited { 
+        color: $mainViolet;
+        font-weight: 500; 
+      }
+      &:hover,
+      &:active { color: $mainVioletLight; }
+    }
+  }
+}

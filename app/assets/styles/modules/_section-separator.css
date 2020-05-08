@@ -1,0 +1,14 @@
+.section-separator {
+  &__svg {
+    z-index: 2;
+    position: relative;
+    & path,
+    & path {
+      fill: $mainVioletLight;
+      stroke: $mainVioletLight;
+    }
+  }
+
+  &__svg--up { transform: translateY(5px); }
+  &__svg--down { transform: translateY(-2px); }
+}

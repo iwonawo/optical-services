@@ -1,0 +1,43 @@
+.primary-nav {
+  font-size: 16px;
+  font-weight: 200;
+  color: #fff;
+  display: block;
+  @mixin atSmall { font-size: 18px; }
+
+  li {
+    display: block;
+    @mixin atSmall { 
+      display: inline-block;
+      margin-bottom: 0;
+      &:not(:last-child) { margin-right: 10px; }
+    }
+   
+    a { 
+      color: inherit;
+      display: block;
+      width: 120px;
+      text-align: center;
+      margin: 0 auto 5px auto;
+      background-color: $mainViolet;
+      padding: 6px 10px;
+      border-radius: 10px;
+      box-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, .2);
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+      transition: background-color .3s ease-in;
+      @mixin atSmall {
+        margin-bottom: 0;
+        width: auto;
+      }
+    
+      &:hover,
+      &:active {
+        background-color: $mainVioletLight;
+        cursor: pointer;
+      }
+    }
+  }
+  
+}
+
+

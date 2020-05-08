@@ -1,0 +1,111 @@
+.services {
+  margin: 1rem 0 0 0;
+  @mixin atSmall { margin: 1rem 1rem 0 1rem; }
+  @mixin atMedium { margin: 3rem 5rem 0 5rem; }
+
+  &__item {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    transition: height .3s ease-in;
+    width: 100%;
+    height: 180px;
+  }
+
+  &__img {
+    background-size: cover;
+    background-position-x: center;
+    background-color: rgba($mainVioletLight, .8);
+    background-blend-mode: overlay;
+    transition: all .3s ease-in;
+    @mixin atMedium { background-position-y: center; }
+
+    &--1 { 
+      background-image: url(assets/images/3-small.jpg);
+      @mixin atMedium { background-image: url(assets/images/3-large-services.jpg); }
+    }
+    &--2 { background-image: url(assets/images/2-small.jpg);
+      @mixin atMedium { background-image: url(assets/images/2-large.jpg); }
+    }
+    &--3 { background-image: url(assets/images/5-small.jpg);
+      @mixin atMedium { background-image: url(assets/images/5-large.jpg); }
+    }
+    &--4 { 
+      background-image: url(assets/images/7-small.jpg);
+      @mixin atMedium { background-image: url(assets/images/7-large.jpg); }
+    }
+  }
+
+  &__item--title {
+    color: rgba(#fff, .98);
+    //color: rgba(#000, .3);
+    font-family: $fontHero;
+    font-weight: 900;
+    font-size: 40px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1;
+    transition: color .3s ease-in;
+
+    @mixin atSmall { font-size: 50px}
+    @mixin atMedium { 
+      top: 30px;
+      left: 50px;
+      transform: translateX(0);
+      text-align: left;
+      font-size: 70px;
+    }
+  }
+
+  &__item--content-box {
+    margin: 1rem 0;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: all .3s ease-in;
+
+    @mixin atSmall { font-size: 50px}
+    @mixin atMedium { 
+      top: 130px;
+      left: 50px;
+      transform: translateX(0);
+      text-align: left;
+      font-size: 70px;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #fff;
+      margin: 0 0 .2rem 0;
+      text-align: left;
+      background-color: rgba($mainVioletDark, .55);
+      padding: .8rem 1rem;
+      display: block;
+      width: 200px;
+      text-align: center;
+      @mixin atSmaller { width: 300px; }
+      @mixin atSmall { 
+        font-size: 1.1rem; 
+        width: 100%;
+      }
+      @mixin atMedium { text-align: left; }
+    }
+  }
+  
+  .active-item {
+    height: 400px;
+    background-color: transparent;
+    background-blend-mode: normal;
+    .services__item--content-box { opacity: 1; }
+    .services__item--title { color: rgba(#fff, 1); }
+    
+  }
+  
+}

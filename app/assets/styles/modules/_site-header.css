@@ -1,0 +1,135 @@
+.site-header {
+  width: 100%;
+  height: 500px;
+  z-index: 2;
+  padding: 50px 5px;
+	position: relative;
+	display: block;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);  
+  @mixin clearfix{};
+  @mixin atSmall { padding: 30px; }
+
+  a { text-decoration: none; }
+
+  &__logo {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding-bottom: 10px;
+
+    @mixin atLarge {
+      float: left;
+      text-align: left;
+      display: inline;
+      width: auto;
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 20px;
+      color: #eee;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+      font-family: $fontHero;
+      @mixin atMedium { font-size: 24px; }
+    
+      span {
+        font-family: $fontLogo;
+        font-weight: 400;
+        font-size: 45px;
+        letter-spacing: -16px;
+        margin-right: 20px;
+        color: $mainViolet;
+        @mixin atMedium { font-size: 55px; }
+      }
+    }
+  }
+  
+  &__menu {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    font-family: $fontHero;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in, visibility .3s ease-in;
+    @mixin atSmall { 
+      opacity: 1;
+      visibility: visible;
+    }
+    @mixin atLarge {
+      float: right;
+      text-align: right;
+      display: inline-block;
+      width: auto;
+    }
+
+    &--is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  &__menu-icon {
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 10;
+    cursor: pointer;
+    @mixin atSmall { display: none; }
+    
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      transform-origin: 0 0;
+      transition: transform .3s ease-out;
+    }
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      transition: all .3s ease-out;
+      transform-origin: 0 50%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: #FFF;
+      transform-origin: 0 100%;
+      transition: transform .3s ease-out;
+    }
+  }
+
+  &__menu-icon__close-x {
+    &::before {
+      transform: rotate(45deg) scaleX(1.25);
+    }
+    .site-header__menu-icon__middle {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    &::after {
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+    }
+    
+  }
+  
+}
+

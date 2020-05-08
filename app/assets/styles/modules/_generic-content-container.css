@@ -1,0 +1,18 @@
+.generic-content-container {
+  
+  p {
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0 0 1.8rem 0;
+    text-align: center;
+
+    @mixin atSmall { font-size: 1.1rem; }
+    @mixin atMedium { text-align: left; }
+  }
+  
+  p a {
+    font-weight: 500;
+    transition: all .2s ease-in-out;
+  }
+}

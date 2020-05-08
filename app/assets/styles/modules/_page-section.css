@@ -1,0 +1,65 @@
+.page-section {
+  padding: 1.2rem 0;
+  @mixin atMedium { padding: 4rem 0; }
+
+  &--violet-light { background-color: $mainVioletLight; }
+  &--violet-dark { background-color: $mainVioletDark; }
+  &--no-t-b-padding { padding: 0; }
+  &--no-t-padding-from-medium { 
+    @mixin atMedium { padding: 0 0 4rem 0; }
+  }
+  &--t-b-padding-small { padding: .6rem 0; }
+  &--t-b-padding-medium { padding: 2.5rem 0; }
+  &--t-b-padding-until-medium { 
+    padding: 2.8rem 0;
+    @mixin atMedium { padding: 4rem 0; }
+  }
+  &--t-padding-until-medium { 
+    padding-top: 2.8rem;
+    @mixin atMedium { padding: 4rem; }
+  }
+
+  /* SECTION ABOUT */
+  &--about {
+    img {
+      display: none;
+      transition: all .3s ease-in-out;
+      @mixin atMedium {
+        display: block;
+        background-color: $mainVioletLight;
+      }
+    }
+    .content-box {
+      opacity: 0;
+      height: 0;
+      transition: opacity .5s ease-in-out;
+      overflow: hidden;
+
+      &.active {
+        height: auto;
+        opacity: 1;
+      }
+    }
+  }
+
+  /* SECTION TESTIMONIAL */
+  &--testimonial {
+    position: relative;
+    height: 320px;
+    z-index: 3;
+    @mixin atSmaller { height: 280px; }
+    @mixin atSmall { height: 320px; }
+    @mixin atMedium { height: 360px; }
+    @mixin atLarge { height: 400px; }
+  }
+
+  /* SECTION STAT */
+  &--circle {
+    transform: translateY(-105px);
+    z-index: 1;
+    position: relative;
+    padding-top: 115px;
+    margin-bottom: -105px;
+  }
+  
+}
